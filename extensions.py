@@ -36,4 +36,5 @@ class Convertor:
 
         r = requests.get(f"https://min-api.cryptocompare.com/data/price?fsym={quote_ticker}&tsyms={base_ticker}")
         resp = json.loads(r.content)[exchanges[base]]
+        resp = resp * amount
         return resp
